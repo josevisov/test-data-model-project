@@ -31,7 +31,11 @@ vars:
     # Use the SCHEMA name here:
     snowplow__atomic_schema: 'SNOWPLOW_SCHEMA'
     
-    snowplow__start_date: '2024-10-01' 
+    # Disable mobile tracking if you only have web data:
+    snowplow__enable_mobile: false
+    
+    # Set this to a date where you know you have tracked events
+    snowplow__start_date: '2024-12-04'
 
 
 # Configuring models
