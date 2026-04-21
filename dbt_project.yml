@@ -24,7 +24,14 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 vars:
-  snowplow__license_accepted: true
+  snowplow_unified:
+    snowplow__license_accepted: true
+    # Replace these with your actual Snowflake names:
+    snowplow__atomic_schema: 'SNOWPLOW_SCHEMA' # e.g. 'ATOMIC'
+    snowplow__database: 'EVENTS'    # e.g. 'RAW_DATA'
+    
+    # Set this to a recent date to avoid processing years of empty data
+    snowplow__start_date: '2024-10-01' 
 
 
 # Configuring models
